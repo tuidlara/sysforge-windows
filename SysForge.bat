@@ -65,10 +65,41 @@ goto MENU
 
 :REPARAR
 cls
-powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1"
-pause
-goto MENU
 
+echo ==========================================
+echo            REPARAR WINDOWS
+echo ==========================================
+echo.
+echo [1] Verificar arquivos do sistema (SFC)
+echo [2] Reparar imagem do Windows (DISM)
+echo.
+echo [0] Voltar
+echo.
+
+set /p reparo="Escolha uma opcao: "
+
+if "%reparo%"=="1" goto SFC
+if "%reparo%"=="2" goto DISM
+if "%reparo%"=="0" goto MENU
+
+echo.
+echo Opcao invalida.
+pause
+goto REPARAR
+
+
+:SFC
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1" SFC
+pause
+goto REPARAR
+
+
+:DISM
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1" DISM
+pause
+goto REPARAR
 :LIMPEZA
 echo Limpeza basica
 pause
