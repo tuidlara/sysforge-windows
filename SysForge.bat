@@ -43,7 +43,8 @@ goto MENU
 
 
 :DIAGNOSTICO
-echo Diagnostico rapido
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\diagnostico.ps1"
 pause
 goto MENU
 
