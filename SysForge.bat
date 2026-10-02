@@ -1,4 +1,13 @@
 @echo off
+
+:: verifica se o SysForge esta sendo executado como administrador
+net session >nul 2>&1
+
+if %errorlevel% neq 0 (
+    powershell -Command "Start-Process '%~f0' -Verb RunAs"
+    exit
+)
+
 title SysForge - Windows Diagnostic & Maintenance Toolkit
 color 07
 
@@ -55,7 +64,8 @@ pause
 goto MENU
 
 :REPARAR
-echo Reparar Windows
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1"
 pause
 goto MENU
 
