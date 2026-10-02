@@ -1,4 +1,3 @@
-# Display diagnostic header
 Write-Host "=== DIAGNOSTICO RAPIDO ==="
 
 Write-Host ""

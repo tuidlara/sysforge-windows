@@ -49,7 +49,8 @@ pause
 goto MENU
 
 :REDE
-echo Diagnostico de rede
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\rede.ps1"
 pause
 goto MENU
 
