@@ -100,8 +100,10 @@ cls
 powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1" DISM
 pause
 goto REPARAR
+
 :LIMPEZA
-echo Limpeza basica
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\limpeza.ps1"
 pause
 goto MENU
 
