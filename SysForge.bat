@@ -108,7 +108,8 @@ pause
 goto MENU
 
 :SISTEMA
-echo Informacoes do sistema
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\sistema.ps1"
 pause
 goto MENU
 
