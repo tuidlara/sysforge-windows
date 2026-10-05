@@ -114,7 +114,8 @@ pause
 goto MENU
 
 :DESEMPENHO
-echo Processos e desempenho
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\desempenho.ps1"
 pause
 goto MENU
 
