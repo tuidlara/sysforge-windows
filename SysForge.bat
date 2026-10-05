@@ -120,7 +120,8 @@ pause
 goto MENU
 
 :INICIALIZACAO
-echo Programas de inicializacao
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\inicializacao.ps1"
 pause
 goto MENU
 
