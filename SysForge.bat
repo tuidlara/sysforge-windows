@@ -132,6 +132,7 @@ pause
 goto MENU
 
 :RELATORIO
-echo Gerar relatorio
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\relatorio.ps1"
 pause
 goto MENU
