@@ -126,7 +126,8 @@ pause
 goto MENU
 
 :SERVICOS
-echo Servicos do Windows
+cls
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\servicos.ps1"
 pause
 goto MENU
 
