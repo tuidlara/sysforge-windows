@@ -29,7 +29,8 @@ echo [6] Informacoes do sistema
 echo [7] Processos e desempenho
 echo [8] Programas de inicializacao
 echo [9] Servicos do Windows
-echo [10] Gerar relatorio
+echo [10] Diagnostico de bateria
+echo [11] Gerar relatorio
 echo.
 echo [0] Sair
 echo.
@@ -45,7 +46,8 @@ if "%opcao%"=="6" goto SISTEMA
 if "%opcao%"=="7" goto DESEMPENHO
 if "%opcao%"=="8" goto INICIALIZACAO
 if "%opcao%"=="9" goto SERVICOS
-if "%opcao%"=="10" goto RELATORIO
+if "%opcao%"=="10" goto BATERIA
+if "%opcao%"=="11" goto RELATORIO
 if "%opcao%"=="0" exit
 
 echo.
@@ -246,6 +248,15 @@ goto MENU
 cls
 
 powershell -ExecutionPolicy Bypass -File "%~dp0modules\relatorio.ps1"
+
+pause
+goto MENU
+
+
+:BATERIA
+cls
+
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\bateria.ps1"
 
 pause
 goto MENU
