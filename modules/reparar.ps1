@@ -38,7 +38,26 @@ elseif ($Reparo -eq "DISM") {
     }
 
 }
-else {
+elseif ($Reparo -eq "CHKDSK") {
 
-    Write-Host "Reparo invalido."
+    Write-Host "Verificando disco..."
+    Write-Host ""
+
+    chkdsk C:
+
+    Write-Host ""
+    Write-Host "Verificacao do disco concluida."
+    Write-Host "Consulte o resultado acima para verificar se foram encontrados problemas."
+}
+elseif ($Reparo -eq "REPARAR_DISCO") {
+
+    Write-Host "Reparando disco..."
+    Write-Host ""
+
+    chkdsk C: /f
+
+    Write-Host ""
+    Write-Host "O disco esta em uso pelo Windows."
+    Write-Host "Para reparar, confirme o agendamento com S."
+    Write-Host "O reparo sera executado no proximo reinicio."
 }

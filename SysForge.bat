@@ -144,6 +144,8 @@ echo ==========================================
 echo.
 echo [1] Verificar arquivos do sistema (SFC)
 echo [2] Reparar imagem do Windows (DISM)
+echo [3] Verificar disco (CHKDSK)
+echo [4] Reparar disco (CHKDSK)
 echo.
 echo [0] Voltar
 echo.
@@ -152,6 +154,8 @@ set /p reparo="Escolha uma opcao: "
 
 if "%reparo%"=="1" goto SFC
 if "%reparo%"=="2" goto DISM
+if "%reparo%"=="3" goto CHKDSK
+if "%reparo%"=="4" goto REPARAR_DISCO
 if "%reparo%"=="0" goto MENU
 
 echo.
@@ -177,6 +181,21 @@ powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1" DISM
 pause
 goto REPARAR
 
+:CHKDSK
+cls
+
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1" CHKDSK
+
+pause
+goto REPARAR
+
+:REPARAR_DISCO
+cls
+
+powershell -ExecutionPolicy Bypass -File "%~dp0modules\reparar.ps1" REPARAR_DISCO
+
+pause
+goto REPARAR
 
 :LIMPEZA
 cls
