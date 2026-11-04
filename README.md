@@ -74,3 +74,7 @@ Diagnostic or maintenance result
 Some operations can modify Windows configuration or require a system restart, such as network resets, CHKDSK repairs, SFC, and DISM.
 
 Use repair operations carefully and review the displayed information before proceeding.
+
+## Autor
+
+Arthur de Lara Zilli - [LinkedIn](https://www.linkedin.com/in/arthur-de-lara-zilli-957512420/)
